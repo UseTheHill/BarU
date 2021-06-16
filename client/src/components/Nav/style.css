@@ -1,0 +1,45 @@
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+.nav-info{
+  height:100%;
+}
+
+.nav-box a{
+  height:100%;
+  float: right;
+  padding: 0px 10px;
+  vertical-align: middle;
+}
+
+.nav-info a li{
+  display:flex;
+  justify-content: center;
+  height:100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  color: var(--lightfont_color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding-top: 18px;
+  overflow: hidden;
+ 
+}
+
+:root{
+  --block_color: rgb(15, 146, 179);
+  --lightfont_color: whitesmoke;
+  --Header_Footer_color: black;
+  --portfolio_example_color: blueviolet;
+
+  --blue: blue;
+  --black: black;
+}
+
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+}
