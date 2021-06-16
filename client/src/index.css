@@ -1,9 +1,9 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: blueviolet;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #a6ecff;
+}
 
 @tailwind base;
 @tailwind components;
