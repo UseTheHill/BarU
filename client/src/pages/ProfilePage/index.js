@@ -1,6 +1,11 @@
 import React from "react";
 import logo from "../../BarU-logo.png";
 
+export default App;
+
+// import React, { Component } from "react";
+// import { Link } from "react-router-dom";
+
 function ProfilePageScreen () {
     return(
     <div className="App">
@@ -11,5 +16,3 @@ function ProfilePageScreen () {
     </div>
     )
 }
-
-export default ProfilePageScreen;
