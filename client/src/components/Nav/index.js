@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav() {
   return (
@@ -15,7 +14,11 @@ function Nav() {
           <li className="nav-item">
             <Link
               to="/login"
-              className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+              className={
+                window.location.pathname === "/login"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
             >
               Login
             </Link>
@@ -23,7 +26,11 @@ function Nav() {
           <li className="nav-item">
             <Link
               to="/post"
-              className={window.location.pathname === "/post" ? "nav-link active" : "nav-link"}
+              className={
+                window.location.pathname === "/post"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
             >
               Post
             </Link>
@@ -31,7 +38,11 @@ function Nav() {
           <li className="nav-item">
             <Link
               to="/profile"
-              className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}
+              className={
+                window.location.pathname === "/profile"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
             >
               Profile
             </Link>
@@ -39,7 +50,11 @@ function Nav() {
           <li className="nav-item">
             <Link
               to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+              className={
+                window.location.pathname === "/search"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
             >
               Search
             </Link>
