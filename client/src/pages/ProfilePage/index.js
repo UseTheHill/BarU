@@ -11,5 +11,4 @@ function ProfilePageScreen () {
     </div>
     )
 }
-
 export default ProfilePageScreen;
