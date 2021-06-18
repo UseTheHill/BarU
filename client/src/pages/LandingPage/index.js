@@ -20,8 +20,6 @@ export default function Landing({ fixed }) {
         //////////////////////////////////////////////////////Login & Sign up BTNS  / Guest BTN////////////////////////////////////////////////////////////////////////////
       }
       <div class="flex justify-center p-8">
-
-
         < button className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
           <Link
             to="/login"
@@ -31,13 +29,13 @@ export default function Landing({ fixed }) {
           </Link>
         </button >
 
-
-
         < button className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
           Sign Up
         </button >
       </div>
-
+      {
+        //////////////////////////////////////////////////////Search Page Route////////////////////////////////////////////////////////////////////////////
+      }
       <div id="guest" class="flex justify-center p-8...">
         <p>Don't wanna create an account but still want drink ideas? < button className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
         <Link
