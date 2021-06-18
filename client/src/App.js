@@ -6,7 +6,7 @@ import LandingPage from "./pages/LandingPage/index";
 import PostPage from "./pages/PostPage/index";
 import ProfilePage from "./pages/ProfilePage/index";
 import SearchPage from "./pages/SearchPage/index";
-import LoginPage from "./pages/LoginPage/index";
+import LoginForm from "./pages/LoginForm/LoginForm";
 import Nav from "./components/Nav/index";
 
 
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/post" component={PostPage} />
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/search" component={SearchPage} />
-            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/login" component={LoginForm} />
     </Router>
   );
 }
