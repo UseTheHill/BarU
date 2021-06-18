@@ -24,11 +24,14 @@
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "animejs": "^3.2.1",
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.0.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
+    "material-ui": "^0.20.2",
     "mongoose": "^5.12.14",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-tap-event-plugin": "^3.0.3"
   }
 }
