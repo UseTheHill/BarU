@@ -5,6 +5,8 @@ import logo from "../../BarU-logo.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
+
 import React, { Component } from "react";
 export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -111,6 +113,7 @@ export default function Nav({ fixed }) {
                   : "nav-link"
               }
             >
+
                 <a
                   className="px-3 py-2 flex items-center text-xs uppercase font font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo">
@@ -126,5 +129,6 @@ export default function Nav({ fixed }) {
         </div>
       </nav>
     </>
+
   );
 }

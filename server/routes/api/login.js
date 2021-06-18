@@ -4,7 +4,7 @@ const UserSession = require('../../models/userSession');
 module.exports = (app) => {
     app.get('/api/login', (req, res, next));
 
-    app.post('api/account/login', (req, res, next) => {
+    app.post('/api/login', (req, res, next) => {
         const { body } = req;
         const {
             username,

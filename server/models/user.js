@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-//create user schema object
-const UserSchema = new mongoose.UserSchema({
+//create user schema object data
+const UserSchema = new mongoose.Schema({
+
     username: {
         type:String,
         default: ''
@@ -24,7 +25,7 @@ const UserSchema = new mongoose.UserSchema({
 
 //create method to create password privacy
 UserSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 };
 
 //validate password method
