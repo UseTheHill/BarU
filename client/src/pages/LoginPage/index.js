@@ -8,6 +8,9 @@ function LoginPageScreen () {
           <img src={logo}  alt="logo" />
           <h2>Welcome to the BarU LoginPage!</h2>
         </div>
+        <div>
+          
+        </div>
     </div>
     )
 }
