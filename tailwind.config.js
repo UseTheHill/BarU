@@ -18,12 +18,20 @@ module.exports = {
 
         // Complex site-specific row configuration
        'layout': '200px minmax(900px, 1fr) 100px',
-      }gridTemplateRows: {
+      },
+      gridTemplateRows: {
         // Simple 8 row grid
        '8': 'repeat(8, minmax(0, 1fr))',
 
         // Complex site-specific row configuration
        'layout': '200px minmax(900px, 1fr) 100px',
+      },
+      colors: {
+        'blueBackground': '#A6ECFF',
+        'pink': '#FF9D9D',
+        'yellow':  ' #FFF7C7',
+        'green': '#A6FFBF',
+        'purple': '#B6ADFF'
       }
     },
   },
