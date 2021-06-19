@@ -1,7 +1,7 @@
 //import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import logo from "../../BarU-logo.png";
+import logo from "../../BarU-logo-2.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -12,24 +12,24 @@ export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-300 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
 
           {
             // Nav Bar Logo
           }
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
             <Link
               to="/"
               className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
             >
               <a
-                className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+                className="font-semibold text-xl tracking-tight "
               >
                 {
                   // Nav Bar Image/text source
                 }
-                <img class="object-scale-down h-12 w-full ..." src={logo} alt="logo" />
+                <img class="object-scale-down h-12 w-full ..." src={logo} alt="logo" />BarU
               </a>
               <button
                 className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
