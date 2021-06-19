@@ -1,6 +1,6 @@
 # BarU
 
-<img src="/Users/kathrynmcdonough/Desktop/bootcamp/BarU/client/src/BarU-logo.png" width="100" height="100">
+<img src="client/src/BarU-logo.png" width="100" height="100">
 
 ## Deployed Link
 
@@ -23,7 +23,6 @@ Once you have your drink you can create a post in your account where you can sha
 - Nathan Northrop: https://github.com/Dracon75
 - Erick Michaelson: https://github.com/erickmichaelson
 
-
 ## Technologies Used
 
 - HTML5
@@ -33,7 +32,6 @@ Once you have your drink you can create a post in your account where you can sha
 - Tailwind
 - Animejs
 - MongoDB
-
 
 ## License
 
