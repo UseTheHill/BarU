@@ -124,6 +124,28 @@ export default function Nav({ fixed }) {
                 </Link>
               </li>
 
+              {
+                // Logout Link /////////
+              }
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  className={
+                    window.location.pathname === "/"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  <a
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  >
+
+                    <i id="logout" className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span className="ml-2">
+                      Logout</span>
+                  </a>
+                </Link>
+              </li>
+
             </ul>
           </div>
         </div>
