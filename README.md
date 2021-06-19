@@ -1,29 +1,40 @@
-# Create React Express App
+# BarU
 
-## About This Boilerplate
+<img src="/Users/kathrynmcdonough/Desktop/bootcamp/BarU/client/src/BarU-logo.png" width="100" height="100">
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Deployed Link
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+TBD
 
-## Starting the app locally
+## Demo
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+![gif](#)
 
-```
-npm install
-```
+## Description
 
-This should install node modules within the server and the client folder.
+Most bars have created specialty cocktail menus but if you want a drink off menu, BarU is here to help. Search for some of the best bar drinks and order while at the restaurant.
+Once you have your drink you can create a post in your account where you can share the name of the drink, the bar you got it from and whether or not you liked it.
 
-After both installations complete, run the following command in your terminal:
+## Contributors
 
-```
-npm start
-```
+- Kayte McDonough: https://github.com/UseTheHill?tab=repositories
+- Diamond Lee: https://github.com/leediamo
+- Ellisa Issa: https://github.com/ellisaissa?tab=repositories
+- Nathan Northrop: https://github.com/Dracon75
+- Erick Michaelson: https://github.com/erickmichaelson
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Deployment (Heroku)
+## Technologies Used
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+- HTML5
+- CSS3
+- JavaScript
+- React JS and JSX
+- Tailwind
+- Animejs
+- MongoDB
+
+
+## License
+
+![License: ](https://img.shields.io/badge/license-MIT-blue)
