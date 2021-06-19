@@ -19,7 +19,21 @@ export default function SearchPage({ fixed }) {
         </div>
       </div>
 
+      <div class="col-12 cold-md-6 col-lg-4">
+                <div class="card">
+                    <div class="drinkDetails">
+                        <img id="drinkPic" class="mx-auto d-block"></img>
+                        <h5 id="drinkTitle"></h5>
+                        <ul class="drinkIngredients" id="drinkIngredients"></ul>
+                        <div id="drinkRecipeInfo"></div>
+                    </div>
+                    <div class="card-body" id="drinkNameDiv">
+                        <button id="findDrink" class="btn btn-danger btn-custom">Find Drink</button>
+                    </div>
+                </div>
+      </div>
 
+      
 
 
     </>
