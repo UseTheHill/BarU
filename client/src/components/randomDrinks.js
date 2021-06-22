@@ -11,7 +11,7 @@ export default class randomDrinks extends React.Component {
       console.log(res);
       this.setState({ randomDrinks: res.data });
     });
-  }
+  
 
     let drinkPoster = $('#drinkImg');
     let drinkTitle = $('#drinkTitle');
@@ -29,7 +29,7 @@ export default class randomDrinks extends React.Component {
     drinkPoster.attr("height", "300px");
     drinkPoster.attr("width", "300px");
 
-  render() {
+  render(); {
     return (
       <div class="col-12 cold-md-6 col-lg-4">
         <div class="card">
@@ -62,4 +62,4 @@ export default class randomDrinks extends React.Component {
       </div>
     );
   }
-}
+  }}
