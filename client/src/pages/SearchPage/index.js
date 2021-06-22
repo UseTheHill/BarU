@@ -1,5 +1,5 @@
 import React from "react";
-import randomDrinks from "./components/randomDrinks";
+import randomDrinks from "../../components/randomDrinks";
 
 export default function SearchPage({ fixed }) {
   return (
