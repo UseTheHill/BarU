@@ -141,3 +141,6 @@ module.exports = (app) => {
             });
     });
 };
+
+document.getElementById("signup-btn").addEventListener('click', signup);
+document.getElementById("login-btn").addEventListener('click', loginHandler);
