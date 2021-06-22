@@ -18,7 +18,7 @@
 // import React from "react";
 
 import React, { Component } from "react";
-import Nav from "../../components/Nav";
+import { Link } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PostPageScreen extends Component {
@@ -54,11 +54,11 @@ class PostPageScreen extends Component {
         <p>Enter the description of the drink:</p>
           <textarea type="type" className = "text-pink center height-30py width-40py"></textarea>
         </form>
-        <Link>
-        <button>
-        <button className ="border-pink py-2 text-white-sm focus:outline-black focus:border-black rounded-full" type= "button"/>
-        Submit</button>
+        <button className ="border-pink py-2 text-white-sm focus:outline-black focus:border-black rounded-full" type= "button">
+        <Link to="/profile">
+        Submit
         </Link>
+        </button>
       </div>
     );
     };}
