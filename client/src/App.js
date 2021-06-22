@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage/index";
 import SearchPage from "./pages/SearchPage/index";
 import LoginForm from "./pages/LoginForm/LoginForm";
 import Nav from "./components/Nav/index";
+import "tailwindcss/tailwind.css"
 
 
 function App() {

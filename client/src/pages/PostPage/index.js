@@ -18,7 +18,7 @@
 // import React from "react";
 
 import React, { Component } from "react";
-import Nav from "../../components/Nav";
+import { Link } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PostPageScreen extends Component {
@@ -40,20 +40,25 @@ class PostPageScreen extends Component {
         <form>
         <h1>{this.state.drinkname} {this.state.Barname}</h1>
         <p>Enter the drink name:</p>
-        <input
+        <input class="rounded-full border-pink-200 shadow-default"
           type='text'
           name='drink name'
           onChange={this.myChangeHandler}
         />
         <p>Enter bar name:</p>
-        <input
+        <input class= "rounded-full"
           type='text'
           Barname='bar name'
           onChange={this.myChangeHandler}
         />
         <p>Enter the description of the drink:</p>
-          <textarea type="type"></textarea>
+          <textarea type="type" className = "text-pink center height-30py width-40py"></textarea>
         </form>
+        <button className ="border-pink py-2 text-white-sm focus:outline-black focus:border-black rounded-full" type= "button">
+        <Link to="/profile">
+        Submit
+        </Link>
+        </button>
       </div>
     );
     };}
