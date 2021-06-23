@@ -55,21 +55,20 @@ function LoginForm(props) {
   };
   return (
     <div
-      class="w-full max-w-xs"
-      className="card col-12 col-lg-4 login-card mt-2 hv-center"
+      className="w-full max-w-xs"
+      // className="card col-12 col-lg-4 login-card mt-2 hv-center"
     >
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="form-group text-left">
           <label
             htmlFor="exampleInputEmail1"
-            class="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2"
           >
             Email address
           </label>
           <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="email"
-            className="form-control"
             id="email"
             aria-describedby="emailHelp"
             placeholder="Enter email"
@@ -77,17 +76,16 @@ function LoginForm(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group text-left" class="mb-6">
+        <div className="form-group text-left mb-6">
           <label
-            class="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2"
             htmlFor="exampleInputPassword1"
           >
             Password
           </label>
           <input
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
-            className="form-control"
             id="password"
             placeholder="Password"
             value={state.password}
@@ -95,11 +93,10 @@ function LoginForm(props) {
           />
         </div>
         <div
-          class="flex items-center justify-between"
-          className="form-check"
+          className="flex items-center justify-between form-check"
         ></div>
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
           // className="btn btn-primary"
           onClick={handleSubmitClick}
@@ -117,8 +114,7 @@ function LoginForm(props) {
       <div className="registerMessage">
         <span>Dont have an account? </span>
         <span
-          class="underline cursor-pointer ..."
-          className="loginText"
+          className="underline cursor-pointer loginText"
           onClick={() => redirectToRegister()}
         >
           Register
