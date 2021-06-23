@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Landing({ fixed }) {
   return (
     <>
-      <div id="guest" class="flex justify-center p-8... ">
+      <div id="guest" className="flex justify-center p-8... ">
         <p className="text-lg font-light leading-relaxed mt-6 mb-4 text-blueGray-800">
           Most bars have created specialty cocktail menus but if you want a
           drink off menu,
@@ -25,7 +25,7 @@ export default function Landing({ fixed }) {
       {
         //////////////////////////////////////////////////////Login & Sign up BTNS  / Guest BTN////////////////////////////////////////////////////////////////////////////
       }
-      <div class="flex justify-center p-8">
+      <div className="flex justify-center p-8">
         <button
           className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
@@ -52,7 +52,7 @@ export default function Landing({ fixed }) {
       {
         //////////////////////////////////////////////////////Search Page Route////////////////////////////////////////////////////////////////////////////
       }
-      <div id="guest" class="flex justify-center p-8...">
+      <div id="guest" className="flex justify-center p-8...">
         <p>
           Don't wanna create an account but still want drink ideas?{" "}
           <button
