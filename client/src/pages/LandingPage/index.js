@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default function Landing({ fixed }) {
+  document.title = "Welcome to BarU";
   return (
     <>
       <div id="guest" className="flex justify-center p-8... ">
