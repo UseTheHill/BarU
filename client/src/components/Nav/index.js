@@ -2,7 +2,8 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../BarU-logo-2.png";
-//import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
@@ -32,12 +33,12 @@ export default function Nav({ fixed }) {
                 <img class="object-scale-down h-12 w-full ..." src={logo} alt="logo" />BarU
               </a>
               <button
-                className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                className="text-black cursor-pointer text-xl leading-none px-4 py-1 border border-solid border-black rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
 
-                <i className="fas fa-bars"></i>
+                <i className="fa fa-bars">menu</i>
 
               </button>
             </Link>
