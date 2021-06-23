@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-//import RandomDrinks from "../../components/RandomDrinks-test";
+import RandomDrinks from "../../components/RandomDrinks-test";
 
 export default function SearchPage({ fixed }) {
   return (
@@ -24,8 +24,8 @@ export default function SearchPage({ fixed }) {
         </div>
       </div>
 
-      {//<RandomDrinks />
-      }
+      <RandomDrinks />
+      
     </>
   );
 }

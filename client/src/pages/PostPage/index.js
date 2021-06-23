@@ -32,11 +32,14 @@ class PostPageScreen extends Component {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({ [nam]: val });
-  };
+  }
+  /*const myNewPost = async function(event){
+
+  }*/
   render() {
     return (
       <div>
-        <form>
+        <form id="newPostForm">
           <h1>
             {this.state.drinkname} {this.state.Barname}
           </h1>
@@ -59,13 +62,14 @@ class PostPageScreen extends Component {
             type="type"
             className="text-pink center height-30py width-40py"
           ></textarea>
-        </form>
+        
         <button
           className="border-pink py-2 text-white-sm focus:outline-black focus:border-black rounded-full"
           type="button"
         >
           <Link to="/profile">Submit</Link>
         </button>
+        </form>
       </div>
     );
   }
