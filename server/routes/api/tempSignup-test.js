@@ -1,7 +1,13 @@
 let username = document.getElementById("username");
 let password = document.getElementById("password-id");
 
-
+   /*localStorage.setItem(username.value, password.value);
+    const userUn = localStorage.getItem(username.value);
+    const userPas = localStorage.getItem(password.value);*/
+    
+        
+    console.log(localStorage);
+    alert("local storage successful");
 
 async function signup(event) {
     event.preventDefault();
@@ -12,13 +18,7 @@ async function signup(event) {
     }
     console.log(userObject);
 
-    /*localStorage.setItem(username.value, password.value);
-    const userUn = localStorage.getItem(username.value);
-    const userPas = localStorage.getItem(password.value);*/
-    
-        
-    console.log(localStorage);
-    alert("local storage successful");
+ 
 
     const response = await fetch(
         "/api/user",
