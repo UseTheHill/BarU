@@ -8,8 +8,8 @@ import ProfilePage from "./pages/ProfilePage/index";
 import SearchPage from "./pages/SearchPage/index";
 import LoginForm from "./pages/LoginForm/LoginForm";
 import Nav from "./components/Nav/index";
-import "tailwindcss/tailwind.css";
-import anime from 'animejs/lib/anime.es.js';
+// import "tailwindcss/tailwind.css";
+// import anime from 'animejs/lib/anime.es.js';
 
 function App() {
   return (
