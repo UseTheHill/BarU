@@ -45,14 +45,20 @@ function LoginForm(props) {
         console.log(error);
       });
   };
+
+
+  
   const redirectToHome = () => {
-    props.updateTitle("Home");
+    // props.updateTitle("Home");
     props.history.push("/home");
   };
   const redirectToRegister = () => {
+    // props.updateTitle("Register");
     props.history.push("/register");
-    props.updateTitle("Register");
   };
+
+
+
   return (
     <div
       className="w-full max-w-xs"

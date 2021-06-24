@@ -7,6 +7,7 @@ import image from "../../cocktails_animation_image.jpeg";
 import anime from "animejs/lib/anime.es.js";
 
 export default function Landing({ fixed }) {
+
   anime({
     targets: ".cocktail_image",
     translateX: 250,
@@ -14,6 +15,9 @@ export default function Landing({ fixed }) {
     loop: true,
     easing: "linear",
   });
+
+  document.title = "Welcome to BarU";
+
   return (
     <>
       <div id="guest" className="flex justify-center p-8... ">
@@ -51,11 +55,20 @@ export default function Landing({ fixed }) {
           </Link>
         </button>
 
+       
         <button
           className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
-        >
+        >     <Link 
+        to="/register"
+            className={
+              window.location.pathname === "/register"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
           Sign Up
+          </Link>
         </button>
       </div>
       {
