@@ -45,6 +45,9 @@ function LoginForm(props) {
         console.log(error);
       });
   };
+
+
+  
   const redirectToHome = () => {
     // props.updateTitle("Home");
     props.history.push("/home");
@@ -53,6 +56,9 @@ function LoginForm(props) {
     // props.updateTitle("Register");
     props.history.push("/register");
   };
+
+
+
   return (
     <div
       className="w-full max-w-xs"

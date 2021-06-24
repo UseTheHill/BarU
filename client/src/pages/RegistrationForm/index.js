@@ -4,6 +4,7 @@ import './RegistrationForm.css';
 import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
 import { withRouter } from "react-router-dom";
 
+
 function RegistrationForm(props) {
     const [state , setState] = useState({
         email : "",
@@ -19,13 +20,13 @@ function RegistrationForm(props) {
         }))
     }
     const sendDetailsToServer = () => {
-        if(state.email.length && state.password.length) {
-            props.showError(null);
+        // if(state.email.length && state.password.length) {
+            // props.showError(null);
             const payload={
                 "email":state.email,
                 "password":state.password,
             }
-            axios.post(API_BASE_URL+'/user/register', payload)
+            axios.post(API_BASE_URL+'./server/models/user', payload)
                 .then(function (response) {
                     if(response.status === 200){
                         setState(prevState => ({
@@ -36,15 +37,17 @@ function RegistrationForm(props) {
                         redirectToHome();
                         props.showError(null)
                     } else{
-                        props.showError("Some error ocurred");
+                        // props.showError("Some error ocurred");
+                        console.log('passwords not match')
                     }
                 })
-                .catch(function (error) {
-                    console.log(error);
+                .catch(function () {
+                    // console.log(error);
+                    console.log("here we are");
                 });    
-        } else {
-            props.showError('Please enter valid username and password')    
-        }
+        // } else {
+        //     // props.showError('Please enter valid username and password')    
+        // }
         
     }
     const redirectToHome = () => {
