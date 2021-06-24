@@ -1,14 +1,19 @@
 import React from "react";
 import axios from "axios";
+import { Component } from "react";
 
 export default class RandomDrinks extends React.Component {
   state = {
+    query: '',
+    loading: false,
+    message: '',
+    results: {},
     randomDrinks: [],
   };
 
-  componentDidMount() {
+  componentDidMount(updatedPageNo, query) {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
       .then(({ data }) => {
         console.log(data.drinks);
         this.setState(
@@ -16,51 +21,86 @@ export default class RandomDrinks extends React.Component {
         )
       });
   }
+
+  input = ( event ) => {
+		const query = event.target.value;
+    this.setState({query: query, loading:true, message:' '});
+  }
   render() {
-    const { randomDrinks } = this.state
+    const { query, randomDrinks } = this.state
     console.log(randomDrinks)
+    console.warn(this.state)
     return (
+      <>
+        <div className="col-12 cold-md-6 col-lg-4">
 
-      <div className="col-12 cold-md-6 col-lg-4">
-
-        {/*<ol>
+          {/*<ol>
 
           {randomDrinks}
           <li>
 
           </li>
         </ol>*/}
-        <div className="card">
-          <div className="drinkDetails">
-            <img id="drinkImg" className="mx-auto d-block"></img>
-            <h5 id="drinkTitle"></h5>
-            <ul className="drinkIngredients" id="drinkIngredients"></ul>
-            <div id="drinkRecipeInfo"></div>
+
+          {
+            ///Search Bar///
+          }
+
+          <div className="p-8">
+            <div className="bg-white flex items-center rounded-full shadow-xl">
+              <input
+                type="text"
+                placeholder="Search"
+                name="query"
+                value={ query }
+                onChange={this.input}
+                className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
+              />
+              <div className="p-4">
+                <button className="bg-pink-500 text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                  icon
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="card-body" id="drinkNameDiv">
-            <h5 className="card-title">Cocktail Recipe</h5>
-            <p className="card-text" id="drinkRecipe"></p>
-            <input
-              type="text"
-              placeholder="enter drink search here"
-              id="drinkName"
-            ></input>
-            <button
-              id="drinkNameSubmit"
-              className="btn btn-danger btn-custom"
-            >
-              Find Drink
-            </button>
-            <button id="saveDrink" className="btn btn-danger btn-custom">
-              Save Drink
-            </button>
-            <button id="loadDrink" className="btn btn-danger btn-custom">
-              Load Drink
-            </button>
-            <p className="saveFeedback" id="saveDrinkFeedback"></p>
+
+          {
+            ///Buttons///
+          }
+          <div className="card">
+            <div className="drinkDetails">
+              <img id="drinkImg" className="mx-auto d-block"></img>
+              <h5 id="drinkTitle"></h5>
+              <ul className="drinkIngredients" id="drinkIngredients"></ul>
+              <div id="drinkRecipeInfo"></div>
+            </div>
+            <div className="card-body" id="drinkNameDiv">
+              {
+                //<h5 className="card-title">Cocktail Recipe</h5>
+                //<p className="card-text" id="drinkRecipe"></p>
+                //<input
+                //type="text"
+                //placeholder="enter drink search here"
+                // id="drinkName"
+                //></input>
+                //<button
+                // id="drinkNameSubmit"
+                // className="btn btn-danger btn-custom"
+                // >
+                // Find Drink
+                // </button>
+              }
+              <button id="saveDrink" className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                Save Drink
+              </button>
+              <button id="loadDrink" className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                Load Drink
+              </button>
+              <p className="saveFeedback" id="saveDrinkFeedback"></p>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
