@@ -3,8 +3,17 @@
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import image from "../../cocktails_animation_image.jpeg";
+import anime from "animejs/lib/anime.es.js";
 
 export default function Landing({ fixed }) {
+  anime({
+    targets: ".cocktail_image",
+    translateX: 250,
+    direction: "alternate",
+    loop: true,
+    easing: "linear",
+  });
   return (
     <>
       <div id="guest" className="flex justify-center p-8... ">
@@ -71,6 +80,9 @@ export default function Landing({ fixed }) {
             </Link>
           </button>
         </p>
+      </div>
+      <div className="cocktail_image object-none object-center  ...">
+        <img src={image} />
       </div>
     </>
   );
