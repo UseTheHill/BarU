@@ -4,11 +4,8 @@ import "./style.css";
 import logo from "../../BarU-logo-2.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import React, { Component } from "react";
 export default function Nav({ fixed }) {
- 
-
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>

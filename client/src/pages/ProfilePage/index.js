@@ -3,50 +3,79 @@ import logo from "../../BarU-logo.png";
 
 function ProfilePageScreen() {
   return (
-    <div>
-      <div className="p-20 bg-blue-100">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-2 text-gray-800">
-            Card with no image
-          </h2>
-          <p className="text-gray-700">This is my cool new card!</p>
-          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Edit
-          </button>
+    <div class="blogs__wraper bg-gray-200  py-20 px-20">
+      <div class="flex justify-between items-center">
+        <div class="blogs bg-white mr-5">
+          <img
+            src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class=""
+          />
+          <div class="p-5">
+            <h1 class="text-2xl font-bold text-green-800 py-2">
+              Lorem ipsum dolor sit amet
+            </h1>
+            <p class="bg-white text-sm text-black">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
+              natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
+              Dicta ipsam atque voluptatem provident!
+            </p>
+            <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8 ">
+              Edit
+            </button>
 
-          <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Delete
-          </button>
+            <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
+              Delete
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="p-20 bg-blue-100">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-2 text-gray-800">
-            Card with no image
-          </h2>
-          <p className="text-gray-700">This is my cool new card!</p>
-          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Edit
-          </button>
+        <div class="blogs bg-white mr-5">
+          <img
+            src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class=""
+          />
+          <div class="p-5">
+            <h1 class="text-2xl font-bold text-green-800 py-2">
+              Lorem ipsum dolor sit amet
+            </h1>
+            <p class="bg-white text-sm text-black">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
+              natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
+              Dicta ipsam atque voluptatem provident!
+            </p>
+            <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
+              Edit
+            </button>
 
-          <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Delete
-          </button>
+            <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
+              Delete
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="p-20 bg-blue-100">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-2 text-gray-800">
-            Card with no image
-          </h2>
-          <p className="text-gray-700">This is my cool new card!</p>
-          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Edit
-          </button>
+        <div class="blogs bg-white mr-5">
+          <img
+            src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class=""
+          />
+          <div class="p-5">
+            <h1 class="text-2xl font-bold text-green-800 py-2">
+              Lorem ipsum dolor sit amet
+            </h1>
+            <p class="bg-white text-sm text-black">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
+              natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
+              Dicta ipsam atque voluptatem provident!
+            </p>
+            <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
+              Edit
+            </button>
 
-          <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 rounded space-x-2 md:space-x-8">
-            Delete
-          </button>
+            <button className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>
