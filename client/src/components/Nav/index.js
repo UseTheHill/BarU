@@ -4,8 +4,11 @@ import "./style.css";
 import logo from "../../BarU-logo-2.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import React, { Component } from "react";
 export default function Nav({ fixed }) {
+ 
+
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -14,7 +17,7 @@ export default function Nav({ fixed }) {
           {
             // Nav Bar Logo
           }
-          <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
+          <div className="logoContainer p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
             <Link
               to="/"
               className={
@@ -28,7 +31,7 @@ export default function Nav({ fixed }) {
                   // Nav Bar Image/text source
                 }
                 <img
-                  className="object-scale-down h-12 w-full ..."
+                  className="logoImage object-scale-down h-12 w-full ..."
                   src={logo}
                   alt="logo"
                 />
