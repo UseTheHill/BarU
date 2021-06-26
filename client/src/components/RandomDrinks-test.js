@@ -3,6 +3,7 @@ import axios from "axios";
 import { Component } from "react";
 
 export default class RandomDrinks extends React.Component {
+  //ask about super props and cancel token
   state = {
     query: '',
     loading: false,
@@ -11,36 +12,42 @@ export default class RandomDrinks extends React.Component {
     randomDrinks: [],
   };
 
-  componentDidMount(updatedPageNo, query) {
+
+
+  componentDidMount(randomDrinks) {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
+      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`)
       .then(({ data }) => {
         console.log(data.drinks);
         this.setState(
           { randomDrinks: data.drinks }
         )
       });
+
   }
 
-  input = ( event ) => {
-    const query = event.target.value;
-    this.setState({query: query, loading:true, message:' '});
+  input = (event) => {
+    const randomDrinks = event.target.value;
+    this.setState({ query: randomDrinks, loading: true, message: ' ' }, () => {
+      this.componentDidMount(randomDrinks)
+    });
   }
   render() {
-    const { query, randomDrinks } = this.state
-    console.log(randomDrinks)
-    console.warn(this.state)
+     const { query, randomDrinks } = this.state
+    // console.log(randomDrinks)
+    // console.warn(this.state)
+
+    // function renderList(props) {
+    //   const drinkEl = props.randomDrinks.map((post) =>
+    //     /*< div>
+    //     <img src={query.strDrinkThumb} />
+    //     </div >*/
+    //     <h1>{query.strDrink}</h1>
+    //   );}
     return (
       <>
         <div className="col-12 cold-md-6 col-lg-4">
 
-          {/*<ol>
-
-          {randomDrinks}
-          <li>
-
-          </li>
-        </ol>*/}
 
           {
             ///Search Bar///
@@ -51,13 +58,13 @@ export default class RandomDrinks extends React.Component {
               <input
                 type="text"
                 placeholder="Search"
-                name="query"
-                value={ query }
+                name="randomDrinks"
+                value={query}
                 onChange={this.input}
                 className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
               />
               <div className="p-4">
-                <button className="bg-pink-500 text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                <button key={this.renderList} className="bg-pink-500 text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
                   icon
                 </button>
               </div>
@@ -99,7 +106,28 @@ export default class RandomDrinks extends React.Component {
               <p className="saveFeedback" id="saveDrinkFeedback"></p>
             </div>
           </div>
+
+          {//showing api data
+          }
+          <ol>
+            {this.state.randomDrinks.map(drink => {
+              return (
+              <li>
+                {drink.strDrink}
+                <img src={drink.strDrinkThumb}/>
+
+              </li>
+              )
+            })}
+          </ol>
+
         </div>
+
+        { //<div>
+          //{drinkEL}
+          //</div>
+        }
+
       </>
     );
   }
