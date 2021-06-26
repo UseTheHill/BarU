@@ -14,7 +14,7 @@ export default function Nav({ fixed }) {
           {
             // Nav Bar Logo
           }
-          <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
+          <div className="logoContainer p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4 ">
             <Link
               to="/"
               className={
@@ -28,18 +28,18 @@ export default function Nav({ fixed }) {
                   // Nav Bar Image/text source
                 }
                 <img
-                  className="object-scale-down h-12 w-full ..."
+                  className="logoImage object-scale-down h-12 w-full ..."
                   src={logo}
                   alt="logo"
                 />
                 BarU
               </div>
               <button
-                className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                className="text-black cursor-pointer text-xl leading-none px-4 py-1 pt-8 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <i className="fas fa-bars"></i>
+                <i className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Menu</i>
               </button>
             </Link>
           </div>
