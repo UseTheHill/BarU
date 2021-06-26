@@ -45,7 +45,7 @@ class PostPageScreen extends Component {
           </h1>
           <p>Enter the drink name:</p>
           <input
-            className="rounded-full border-pink-200 shadow-default"
+            className="rounded-full border-#FF9D9D-200 shadow-default mg-50"
             type="text"
             name="drink name"
             onChange={this.myChangeHandler}
@@ -60,7 +60,7 @@ class PostPageScreen extends Component {
           <p>Enter the description of the drink:</p>
           <textarea
             type="type"
-            className="text-pink center height-30py width-40py"
+            className="text-#B6ADFF center height-30py width-40py"
           ></textarea>
         
         <button
