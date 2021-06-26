@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./LoginForm.css";
-import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
+// import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
+import { mongo } from "mongoose";
+
+
+
 
 function LoginForm(props) {
   const [state, setState] = useState({
@@ -18,40 +22,50 @@ function LoginForm(props) {
     }));
   };
 
-  const handleSubmitClick = (e) => {
-    e.preventDefault();
-    const payload = {
-      email: state.email,
-      password: state.password,
-    };
-    axios
-      .post(API_BASE_URL + "/user/login", payload)
-      .then(function (response) {
-        if (response.status === 200) {
-          setState((prevState) => ({
-            ...prevState,
-            successMessage: "Login successful. Redirecting to home page..",
-          }));
-          localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
-          redirectToHome();
-          props.showError(null);
-        } else if (response.code === 204) {
-          props.showError("Username and password do not match");
+  const LoginFunction = () => {
+    axios.get('/user')
+    // fetch('/api/user', {
+    //   method: 'GET',
+      // headers: {
+      //   'Content-Type': 'application/json'
+      // },
+      // body: JSON.stringify{
+      //   email: state.email,
+      //   password: state.password,
+      // }),
+    
+      .then(res => res.json())
+      .then(json => {
+        console.log('json', json);
+        if (json.success) {
+          this.setState({
+            signUpError: json.message,
+            isLoading: false,
+            email: '',
+            password: '',
+          });
         } else {
-          props.showError("Username does not exists");
+          /*this.setState({
+            signUpError: json.message,
+            isLoading: false,
+          });*/
         }
       })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
 
-
+const handleSubmitClick = (e) => {
+    e.preventDefault();
+    if (state.password) {
+      LoginFunction()
+    } else {
+      //props.showError('Passwords do not match');
+    }
+  }
   
-  const redirectToHome = () => {
-    // props.updateTitle("Home");
-    props.history.push("/home");
-  };
+  // const redirectToHome = () => {
+  //   // props.updateTitle("Home");
+  //   props.history.push("/home");
+  // };
   const redirectToRegister = () => {
     // props.updateTitle("Register");
     props.history.push("/register");
@@ -66,9 +80,9 @@ function LoginForm(props) {
         // className="card col-12 col-lg-4 login-card mt-2 hv-center"
       >
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div class="text-center">
-            <h2 class="mt-5 text-3xl font-bold text-gray-900">Sign In</h2>
-            <p class="mt-2 text-sm text-gray-400 p-2">Welcome Back</p>
+          <div className="text-center">
+            <h2 className="mt-5 text-3xl font-bold text-gray-900">Sign In</h2>
+            <p className="mt-2 text-sm text-gray-400 p-2">Welcome Back</p>
           </div>
           <div className="form-group text-left">
             <label
