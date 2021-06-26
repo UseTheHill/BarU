@@ -6,7 +6,6 @@ const app = express();
 const config = require("./config/config");
 const routes = require("./server/routes");
 
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -17,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 mongoose
-  .connect(config.db_dev, {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/BarU_DB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
