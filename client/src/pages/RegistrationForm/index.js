@@ -1,124 +1,151 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import './RegistrationForm.css';
-import {API_BASE_URL, ACCESS_TOKEN_NAME} from '../../constants/apiConstants';
+import React, { useState } from "react";
+import axios from "axios";
+import "./RegistrationForm.css";
+import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
 
-
 function RegistrationForm(props) {
-    const [state , setState] = useState({
-        email : "",
-        password : "",
-        confirmPassword: "",
-        successMessage: null
-    })
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    successMessage: null,
+  });
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+  const sendDetailsToServer = () => {
+    // if(state.email.length && state.password.length) {
+    // props.showError(null);
+    const payload = {
+      email: state.email,
+      password: state.password,
+    };
+    axios
+      .post(API_BASE_URL + "./server/models/user", payload)
+      .then(function (response) {
+        if (response.status === 200) {
+          setState((prevState) => ({
             ...prevState,
-            [id] : value
-        }))
-    }
-    const sendDetailsToServer = () => {
-        // if(state.email.length && state.password.length) {
-            // props.showError(null);
-            const payload={
-                "email":state.email,
-                "password":state.password,
-            }
-            axios.post(API_BASE_URL+'./server/models/user', payload)
-                .then(function (response) {
-                    if(response.status === 200){
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage' : 'Registration successful. Redirecting to home page..'
-                        }))
-                        localStorage.setItem(ACCESS_TOKEN_NAME,response.data.token);
-                        redirectToHome();
-                        props.showError(null)
-                    } else{
-                        // props.showError("Some error ocurred");
-                        console.log('passwords not match')
-                    }
-                })
-                .catch(function () {
-                    // console.log(error);
-                    console.log("here we are");
-                });    
-        // } else {
-        //     // props.showError('Please enter valid username and password')    
-        // }
-        
-    }
-    const redirectToHome = () => {
-        // props.updateTitle('Home')
-        props.history.push('/home');
-    }
-    const redirectToLogin = () => {
-        // props.updateTitle('Login')
-        props.history.push('/login'); 
-    }
-    const handleSubmitClick = (e) => {
-        e.preventDefault();
-        if(state.password === state.confirmPassword) {
-            sendDetailsToServer()    
+            successMessage:
+              "Registration successful. Redirecting to home page..",
+          }));
+          localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
+          redirectToHome();
+          props.showError(null);
         } else {
-            props.showError('Passwords do not match');
+          // props.showError("Some error ocurred");
+          console.log("passwords not match");
         }
+      })
+      .catch(function () {
+        // console.log(error);
+        console.log("here we are");
+      });
+    // } else {
+    //     // props.showError('Please enter valid username and password')
+    // }
+  };
+  const redirectToHome = () => {
+    // props.updateTitle('Home')
+    props.history.push("/home");
+  };
+  const redirectToLogin = () => {
+    // props.updateTitle('Login')
+    props.history.push("/login");
+  };
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    if (state.password === state.confirmPassword) {
+      sendDetailsToServer();
+    } else {
+      props.showError("Passwords do not match");
     }
-    return(
+  };
+  return (
+    <div className="flex justify-center p-8... ">
+      <div className="w-full max-w-xs">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <form>
-                <div className="form-group text-left">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" 
-                       className="form-control" 
-                       id="email" 
-                       aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
-                       value={state.email}
-                       onChange={handleChange}
-                />
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="password" 
-                        placeholder="Password"
-                        value={state.password}
-                        onChange={handleChange} 
-                    />
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" 
-                        className="form-control" 
-                        id="confirmPassword" 
-                        placeholder="Confirm Password"
-                        value={state.confirmPassword}
-                        onChange={handleChange} 
-                    />
-                </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                    onClick={handleSubmitClick}
-                >
-                    Register
-                </button>
-            </form>
-            <div className="alert alert-success mt-2" style={{display: state.successMessage ? 'block' : 'none' }} role="alert">
-                {state.successMessage}
+          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="text-center">
+              <h2 class="mt-5 text-3xl font-bold text-gray-900">Sign Up</h2>
+              <p class="mt-2 text-sm text-gray-400 p-2">Welcome!</p>
             </div>
-            <div className="mt-2">
-                <span>Already have an account? </span>
-                <span className="loginText" onClick={() => redirectToLogin()}>Login here</span> 
+            <div className="form-group text-left mb-2">
+              <label
+                htmlFor="exampleInputEmail1"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                Email address
+              </label>
+              <input
+                type="email"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Email"
+                value={state.email}
+                onChange={handleChange}
+              />
             </div>
-            
+            <div className="form-group text-left mb-2">
+              <label
+                htmlFor="exampleInputPassword1"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="password"
+                placeholder="Password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group text-left mb-2">
+              <label htmlFor="exampleInputPassword1">Confirm Password</label>
+              <input
+                type="password"
+                className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                value={state.confirmPassword}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex items-center justify-between form-check">
+              <button
+                type="submit"
+                className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                onClick={handleSubmitClick}
+              >
+                Register
+              </button>
+            </div>
+          </form>
+          <div
+            className="alert alert-success mt-2"
+            style={{ display: state.successMessage ? "block" : "none" }}
+            role="alert"
+          >
+            {state.successMessage}
+          </div>
+          <div className="mt-2">
+            <span>Already have an account? </span>
+            <span className="loginText" onClick={() => redirectToLogin()}>
+              Login here
+            </span>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default withRouter(RegistrationForm);
