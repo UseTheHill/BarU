@@ -1,15 +1,15 @@
-//import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../BarU-logo-2.png";
-//import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React, { Component } from "react";
+// import React, { Component } from "react";
 export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-300 mb-3">
+      <nav id="navbarcss" className="nav-box relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-300 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           {
             // Nav Bar Logo
@@ -45,17 +45,17 @@ export default function Nav({ fixed }) {
           </div>
 
           <div
-            className={
+            className={ 
               "lg:flex flex-grow items-center" +
               (navbarOpen ? " flex" : " hidden")
-            }
+            } 
             id="example-navbar-danger"
           >
             {
               // Navbar Links/////////////////////////////
             }
 
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+            <ul className=" flex flex-col lg:flex-row list-none lg:ml-auto">
               {
                 // Search Link /////////
               }
