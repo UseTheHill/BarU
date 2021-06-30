@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Component } from "react";
+import "./RandomDrinks.css";
 
 export default class RandomDrinks extends React.Component {
   //ask about super props and cancel token
@@ -64,7 +65,7 @@ export default class RandomDrinks extends React.Component {
                 className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
               />
               <div className="p-4">
-                <button key={this.renderList} className="bg-pink-500 text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                <button key={this.renderList} className="btn-links text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
                   icon
                 </button>
               </div>
@@ -97,10 +98,10 @@ export default class RandomDrinks extends React.Component {
                 // Find Drink
                 // </button>
               }
-              <button id="saveDrink" className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+              <button id="saveDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                 Save Drink
               </button>
-              <button id="loadDrink" className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+              <button id="loadDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                 Load Drink
               </button>
               <p className="saveFeedback" id="saveDrinkFeedback"></p>

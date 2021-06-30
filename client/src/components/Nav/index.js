@@ -9,7 +9,7 @@ export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-300 mb-3">
+      <nav id="nav-color" className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           {
             // Nav Bar Logo
@@ -134,7 +134,7 @@ export default function Nav({ fixed }) {
                   <div className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
                     <i
                       id="logout"
-                      className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"
+                      className="fab fa-facebook-square text-lg leading-lg text-white "
                     ></i>
                     <span className="ml-2">Logout</span>
                   </div>

@@ -1,0 +1,6 @@
+#btn-links{
+    background-color: rgba(182, 173, 255, 0.4);
+}
+#btn-links:hover{
+    background-color: rgba(182, 173, 255, 0.9);
+}

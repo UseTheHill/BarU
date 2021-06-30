@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import image from "../../android-chrome-512x512.png";
 import anime from "animejs/lib/anime.es.js";
+import "./index.css";
 
 export default function Landing({ fixed }) {
   anime({
@@ -39,7 +40,8 @@ export default function Landing({ fixed }) {
       }
       <div className="flex justify-center p-8">
         <button
-          className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          id="btn-links"
+          className=" text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
         >
           <Link
@@ -55,7 +57,8 @@ export default function Landing({ fixed }) {
         </button>
 
         <button
-          className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        id="btn-links"
+          className=" text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
         >
           {" "}
@@ -78,6 +81,7 @@ export default function Landing({ fixed }) {
         <p>
           Don't wanna create an account but still want drink ideas?{" "}
           <button
+          id="btn-links"
             className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
           >
