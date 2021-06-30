@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./RegistrationForm.css";
-import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
+// import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
 
 function RegistrationForm(props) {
@@ -18,52 +18,51 @@ function RegistrationForm(props) {
       [id]: value,
     }));
   };
+  
   const sendDetailsToServer = () => {
-    // if(state.email.length && state.password.length) {
-    // props.showError(null);
-    const payload = {
-      email: state.email,
-      password: state.password,
-    };
-    axios
-      .post(API_BASE_URL + "./server/models/user", payload)
-      .then(function (response) {
-        if (response.status === 200) {
-          setState((prevState) => ({
-            ...prevState,
-            successMessage:
-              "Registration successful. Redirecting to home page..",
-          }));
-          localStorage.setItem(ACCESS_TOKEN_NAME, response.data.token);
-          redirectToHome();
-          props.showError(null);
-        } else {
-          // props.showError("Some error ocurred");
-          console.log("passwords not match");
-        }
-      })
-      .catch(function () {
-        // console.log(error);
-        console.log("here we are");
+    fetch('/api/user', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email: state.email,
+          password: state.password,
+      }),
+  }).then(res => res.json())
+      .then(json => {
+          console.log('json', json);
+          if (json.success) {
+              this.setState({
+                  signUpError: json.message,
+                  isLoading: false,
+                  email: '',
+                  password: '',
+              });
+          } else {
+              /*this.setState({
+                  signUpError: json.message,
+                  isLoading: false,
+              });*/
+          }
       });
-    // } else {
-    //     // props.showError('Please enter valid username and password')
-    // }
   };
-  const redirectToHome = () => {
-    // props.updateTitle('Home')
-    props.history.push("/home");
-  };
+
+  // const redirectToHome = () => {
+  //   // props.updateTitle('Home')
+  //   props.history.push("/home");
+  // };
   const redirectToLogin = () => {
     // props.updateTitle('Login')
     props.history.push("/login");
   };
+
   const handleSubmitClick = (e) => {
     e.preventDefault();
     if (state.password === state.confirmPassword) {
       sendDetailsToServer();
     } else {
-      props.showError("Passwords do not match");
+      // props.showError("Passwords do not match");
     }
   };
   return (
@@ -71,9 +70,9 @@ function RegistrationForm(props) {
       <div className="w-full max-w-xs">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
           <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="text-center">
-              <h2 class="mt-5 text-3xl font-bold text-gray-900">Sign Up</h2>
-              <p class="mt-2 text-sm text-gray-400 p-2">Welcome!</p>
+            <div className="text-center">
+              <h2 className="mt-5 text-3xl font-bold text-gray-900">Sign Up</h2>
+              <p className="mt-2 text-sm text-gray-400 p-2">Welcome!</p>
             </div>
             <div className="form-group text-left mb-2">
               <label
