@@ -1,4 +1,4 @@
-nav.navbar.navbar-default {
+/* nav.navbar.navbar-default {
   margin-bottom: 0;
 }
 .nav-info {
@@ -29,9 +29,9 @@ nav.navbar.navbar-default {
   font-size: 22px;
   padding-top: 18px;
   overflow: hidden;
-}
+} */
 
-:root {
+/* :root {
   --block_color: rgb(15, 146, 179);
   --lightfont_color: whitesmoke;
   --Header_Footer_color: black;
@@ -46,4 +46,9 @@ nav.navbar.navbar-default {
   padding: 0;
   list-style: none;
   text-decoration: none;
+} */
+
+#nav-color{
+  background-color: rgba(255, 157, 157, 0.9) ;
+  
 }

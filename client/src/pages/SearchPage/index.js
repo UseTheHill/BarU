@@ -7,7 +7,6 @@ export default function SearchPage({ fixed }) {
     <>
       {
         ///Search Bar///
-      
 
       //<div className="p-8">
         //<div className="bg-white flex items-center rounded-full shadow-xl">
