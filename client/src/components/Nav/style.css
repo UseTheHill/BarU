@@ -3,6 +3,11 @@
 }
 .nav-info {
   height: 100%;
+  color: black;
+}
+
+#navbarcss {
+  background-color: #FF9D9D;
 }
 
 .nav-box a {
