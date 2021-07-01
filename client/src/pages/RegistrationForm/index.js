@@ -71,9 +71,9 @@ function RegistrationForm(props) {
       <div className="w-full max-w-xs">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
           <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="text-center">
-              <h2 class="mt-5 text-3xl font-bold text-gray-900">Sign Up</h2>
-              <p class="mt-2 text-sm text-gray-400 p-2">Welcome!</p>
+            <div className="text-center">
+              <h2 className="mt-5 text-3xl font-bold text-gray-900">Sign Up</h2>
+              <p className="mt-2 text-sm text-gray-400 p-2">Welcome!</p>
             </div>
             <div className="form-group text-left mb-2">
               <label

@@ -47,7 +47,7 @@ function LoginForm(props) {
   };
 
 
-  
+
   const redirectToHome = () => {
     // props.updateTitle("Home");
     props.history.push("/home");
@@ -63,12 +63,12 @@ function LoginForm(props) {
     <div className="flex justify-center p-8... ">
       <div
         className="w-full max-w-xs"
-        // className="card col-12 col-lg-4 login-card mt-2 hv-center"
+      // className="card col-12 col-lg-4 login-card mt-2 hv-center"
       >
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div class="text-center">
-            <h2 class="mt-5 text-3xl font-bold text-gray-900">Sign In</h2>
-            <p class="mt-2 text-sm text-gray-400 p-2">Welcome Back</p>
+          <div className="text-center">
+            <h2 className="mt-5 text-3xl font-bold text-gray-900">Sign In</h2>
+            <p className="mt-2 text-sm text-gray-400 p-2">Welcome Back</p>
           </div>
           <div className="form-group text-left">
             <label
@@ -104,14 +104,14 @@ function LoginForm(props) {
             />
           </div>
           <div className="flex items-center justify-between form-check">
-          <button
-            className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-            // className="btn btn-primary"
-            onClick={handleSubmitClick}
-          >
-            Login
-          </button>
+            <button
+              className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+              // className="btn btn-primary"
+              onClick={handleSubmitClick}
+            >
+              Login
+            </button>
           </div>
         </form>
         <div

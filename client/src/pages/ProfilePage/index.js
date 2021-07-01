@@ -3,18 +3,18 @@ import logo from "../../BarU-logo.png";
 
 function ProfilePageScreen() {
   return (
-    <div class="blogs__wraper bg-gray-200  py-20 px-20">
-      <div class="flex justify-between items-center">
-        <div class="blogs bg-white mr-5">
+    <div className="blogs__wraper bg-gray-200  py-20 px-20">
+      <div className="flex justify-between items-center">
+        <div className="blogs bg-white mr-5">
           <img
             src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            class=""
+            className=""
           />
-          <div class="p-5">
-            <h1 class="text-2xl font-bold text-green-800 py-2">
+          <div className="p-5">
+            <h1 className="text-2xl font-bold text-green-800 py-2">
               Lorem ipsum dolor sit amet
             </h1>
-            <p class="bg-white text-sm text-black">
+            <p className="bg-white text-sm text-black">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
               natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
@@ -29,16 +29,16 @@ function ProfilePageScreen() {
             </button>
           </div>
         </div>
-        <div class="blogs bg-white mr-5">
+        <div className="blogs bg-white mr-5">
           <img
             src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            class=""
+            className=""
           />
-          <div class="p-5">
-            <h1 class="text-2xl font-bold text-green-800 py-2">
+          <div className="p-5">
+            <h1 className="text-2xl font-bold text-green-800 py-2">
               Lorem ipsum dolor sit amet
             </h1>
-            <p class="bg-white text-sm text-black">
+            <p className="bg-white text-sm text-black">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
               natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
@@ -53,16 +53,16 @@ function ProfilePageScreen() {
             </button>
           </div>
         </div>
-        <div class="blogs bg-white mr-5">
+        <div className="blogs bg-white mr-5">
           <img
             src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            class=""
+            className=""
           />
-          <div class="p-5">
-            <h1 class="text-2xl font-bold text-green-800 py-2">
+          <div className="p-5">
+            <h1 className="text-2xl font-bold text-green-800 py-2">
               Lorem ipsum dolor sit amet
             </h1>
-            <p class="bg-white text-sm text-black">
+            <p className="bg-white text-sm text-black">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Reiciendis vitae qui distinctio ex soluta? Voluptates, ea! Esse,
               natus. Quas possimus laboriosam consectetur deserunt ea sapiente.
