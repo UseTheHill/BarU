@@ -60,7 +60,7 @@ class PostPageScreen extends Component {
   }
   render() {
     return (
-      // <div class="shadow overflow-hidden sm:rounded-md">
+      // <div className="shadow overflow-hidden sm:rounded-md">
       <div className="flex justify-center p-8... ">
         <form onSubmit={this.handleSubmit}
           id="newPostForm"
@@ -110,15 +110,17 @@ class PostPageScreen extends Component {
                 <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-20 p-10 group text-center">
                   <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
                     <div className="flex flex-auto max-h-20 w-2/5 mx-auto -mt-10"></div>
+
                     <input type="file" onChange={this.imageChangeHandler} />
                     <img src={this.state.file} />
+
                     <p className="pointer-none text-gray-500">
                       <a href="" id="" className="text-blue-600 hover:underline">
                         Select a file.
                       </a>
                     </p>
                   </div>
-                  {/* <input type="file" class="hidden"> */}
+                  {/* <input type="file" className="hidden"> */}
                 </label>
               </div>
             </div>
