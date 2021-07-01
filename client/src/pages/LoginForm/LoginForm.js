@@ -53,19 +53,28 @@ function LoginForm(props) {
       })
   };
 
-const handleSubmitClick = (e) => {
+
+
+
+  const redirectToHome = () => {
+    // props.updateTitle("Home");
+    props.history.push("/home");
+  };
+
+/*const handleSubmitClick = (e) => {
     e.preventDefault();
     if (state.password) {
       LoginFunction()
     } else {
       //props.showError('Passwords do not match');
     }
-  }
+  }*/
   
   // const redirectToHome = () => {
   //   // props.updateTitle("Home");
   //   props.history.push("/home");
   // };
+
   const redirectToRegister = () => {
     // props.updateTitle("Register");
     props.history.push("/register");
@@ -77,7 +86,7 @@ const handleSubmitClick = (e) => {
     <div className="flex justify-center p-8... ">
       <div
         className="w-full max-w-xs"
-        // className="card col-12 col-lg-4 login-card mt-2 hv-center"
+      // className="card col-12 col-lg-4 login-card mt-2 hv-center"
       >
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="text-center">
@@ -118,14 +127,14 @@ const handleSubmitClick = (e) => {
             />
           </div>
           <div className="flex items-center justify-between form-check">
-          <button
-            className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-            // className="btn btn-primary"
-            onClick={handleSubmitClick}
-          >
-            Login
-          </button>
+            <button
+              className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+              // className="btn btn-primary"
+              onClick={handleSubmitClick}
+            >
+              Login
+            </button>
           </div>
         </form>
         <div

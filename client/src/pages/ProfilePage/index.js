@@ -3,7 +3,9 @@ import logo from "../../BarU-logo.png";
 
 function ProfilePageScreen() {
   return (
+
     <div className ="blogs__wraper bg-gray-200  py-20 px-20">
+
       <div className="flex justify-between items-center">
         <div className="blogs bg-white mr-5">
           <img
@@ -56,7 +58,7 @@ function ProfilePageScreen() {
         <div className="blogs bg-white mr-5">
           <img
             src="https://images.unsplash.com/photo-1591243315780-978fd00ff9db?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            class=""
+            className=""
           />
           <div className="p-5">
             <h1 className="text-2xl font-bold text-green-800 py-2">
