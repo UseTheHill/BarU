@@ -7,12 +7,10 @@ export default class RandomDrinks extends React.Component {
   //ask about super props and cancel token
   state = {
     query: '',
-    loading: false,
-    message: '',
+    error: '',
     results: {},
     randomDrinks: [],
   };
-
 
 
   componentDidMount(randomDrinks) {
@@ -24,17 +22,21 @@ export default class RandomDrinks extends React.Component {
           { randomDrinks: data.drinks }
         )
       });
-
   }
 
-  input = (event) => {
+  handleInputChange = (event) => {
     const randomDrinks = event.target.value;
-    this.setState({ query: randomDrinks, loading: true, message: ' ' }, () => {
+    this.setState({ query: randomDrinks }, () => {
       this.componentDidMount(randomDrinks)
     });
   }
+
+  handleSubmit = (event) => {
+    this.state.query;
+  }
+
   render() {
-     const { query, randomDrinks } = this.state
+    const { query, randomDrinks } = this.state
     // console.log(randomDrinks)
     // console.warn(this.state)
 
@@ -47,82 +49,106 @@ export default class RandomDrinks extends React.Component {
     //   );}
     return (
       <>
-        <div className="col-12 cold-md-6 col-lg-4">
+        {
+          ///Search Bar///
+        }
+        <div className="p-8">
+          <div className="bg-white flex items-center rounded-full shadow-xl">
+            <input
+              type="text"
+              placeholder="Search"
+              name="randomDrinks"
+              onChange={this.handleInputChange}
+              // onClick={this.handleInputChange}
+              value={query}
+              className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
+            />
+            <div className="p-4">
+              <button  onClick={this.handleSubmit} value={this.state.query}className=" btn-links text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
+                icon
+              </button>
+            </div>
+          </div>
+        </div>
 
+        {
+          //showing api data
+        }
 
-          {
-            ///Search Bar///
-          }
+        {this.state.randomDrinks.map(drink => {
+          return (
+            <div className="drink-wrap">
+              <div className="drink-content">
+                <div className="drink-background">
+                  <img
+                    src={drink.strDrinkThumb}
+                    className="drink-img "
+                  />
+                  <div className="">
+                    <h1 className="drink-title">
+                      {drink.strDrink}
+                    </h1>
+                    <p className="drink-ing">
+                      {drink.strIngredient1}<br />
+                      {drink.strIngredient2}<br />
+                      {drink.strIngredient3}<br />
+                      {drink.strInstructions}<br />
+                    </p>
+                    <div id="drinks-btn">
+                    <button  className="btn-links text-gray-800  font-bold uppercase text-xs px-4 py-2 mx-8 my-4 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                      Save Drink
+                    </button>
 
-          <div className="p-8">
-            <div className="bg-white flex items-center rounded-full shadow-xl">
-              <input
-                type="text"
-                placeholder="Search"
-                name="randomDrinks"
-                value={query}
-                onChange={this.input}
-                className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
-              />
-              <div className="p-4">
-                <button key={this.renderList} className="btn-links text-white rounded-full p-2 hover:bg-pink-400 focus:outline-none w-12 h-12 flex items-center justify-center">
-                  icon
-                </button>
+                    <button  className="btn-links text-gray-800  font-bold uppercase text-xs px-4 py-2 mx-8 my-4 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                      Load Drink
+                    </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          )
+        })}
+
+        {
+          ///Buttons///
+        }
+        {/* <div className="card">
+          <div className="drinkDetails">
+            <img id="drinkImg" className="mx-auto d-block"></img>
+            <h5 id="drinkTitle"></h5>
+            <ul className="drinkIngredients" id="drinkIngredients"></ul>
+            <div id="drinkRecipeInfo"></div>
           </div>
-
-          {
-            ///Buttons///
-          }
-          <div className="card">
-            <div className="drinkDetails">
-              <img id="drinkImg" className="mx-auto d-block"></img>
-              <h5 id="drinkTitle"></h5>
-              <ul className="drinkIngredients" id="drinkIngredients"></ul>
-              <div id="drinkRecipeInfo"></div>
-            </div>
-            <div className="card-body" id="drinkNameDiv">
-              {
-                //<h5 className="card-title">Cocktail Recipe</h5>
-                //<p className="card-text" id="drinkRecipe"></p>
-                //<input
-                //type="text"
-                //placeholder="enter drink search here"
-                // id="drinkName"
-                //></input>
-                //<button
-                // id="drinkNameSubmit"
-                // className="btn btn-danger btn-custom"
-                // >
-                // Find Drink
-                // </button>
-              }
-              <button id="saveDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-                Save Drink
-              </button>
-              <button id="loadDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-                Load Drink
-              </button>
-              <p className="saveFeedback" id="saveDrinkFeedback"></p>
-            </div>
+          <div className="card-body" id="drinkNameDiv">
+            {
+              //<h5 className="card-title">Cocktail Recipe</h5>
+              //<p className="card-text" id="drinkRecipe"></p>
+              //<input
+              //type="text"
+              //placeholder="enter drink search here"
+              // id="drinkName"
+              //></input>
+              //<button
+              // id="drinkNameSubmit"
+              // className="btn btn-danger btn-custom"
+              // >
+              // Find Drink
+              // </button>
+            }
+            <button id="saveDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+              Save Drink
+            </button>
+            <button id="loadDrink" className="btn-links text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+              Load Drink
+            </button>
+            <p className="saveFeedback" id="saveDrinkFeedback"></p>
           </div>
+        </div> */}
 
-          {//showing api data
-          }
-          <ol>
-            {this.state.randomDrinks.map(drink => {
-              return (
-              <li>
-                {drink.strDrink}
-                <img src={drink.strDrinkThumb}/>
 
-              </li>
-              )
-            })}
-          </ol>
 
-        </div>
+
 
         { //<div>
           //{drinkEL}

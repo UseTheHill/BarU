@@ -4,3 +4,61 @@
 .btn-links:hover{
     background-color: rgba(182, 173, 255, 0.9);
 }
+.image-size{
+    max-width:50%;
+    height:auto;
+}
+.drink-wrap{
+    display: flex;
+    justify-content: center;
+    
+}
+.drink-content{
+    position: relative;
+    width: 50%;
+}
+.drink-content:hover .drink-img {
+    opacity: 0.3;
+  }
+  
+  .drink-content:hover .drink-ing {
+    opacity: 1;
+  }
+.drink-background{
+    background-color:white;
+    /* height: 650px; */
+    /* width: 200px; */
+    padding: 0px 0px 25px 0px;
+    margin: 25px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+.drink-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+   
+}
+.drink-title{
+color:rgba(182, 173, 255, 0.9);
+font-size: 50px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:bold;
+text-align: center;
+    
+}
+.drink-ing{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+#drinks-btn{
+    text-align: center;
+}
