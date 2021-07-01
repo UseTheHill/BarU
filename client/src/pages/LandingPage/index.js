@@ -1,7 +1,7 @@
 //import React from "react";
 //import logo from "../../BarU-logo.png";
 
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../../android-chrome-512x512.png";
 import anime from "animejs/lib/anime.es.js";
@@ -17,6 +17,24 @@ export default function Landing({ fixed }) {
   });
 
   document.title = "Welcome to BarU";
+
+  const [loading, setLoading] = useState(true)
+
+  function demoAsyncCall() {
+    return new Promise((resolve) => setTimeout(() => resolve(), 2500));
+  }
+
+  useEffect(() => { 
+    demoAsyncCall().then(
+      ()=> {
+        setLoading(false);
+      }
+    )
+  })
+
+  if (loading) {
+    return <img className="loader" src="android-chrome-512x512.png"/>;
+  }
 
   return (
     <>
@@ -57,7 +75,7 @@ export default function Landing({ fixed }) {
         </button>
 
         <button
-        id="btn-links"
+          id="btn-links"
           className=" text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
         >
@@ -81,7 +99,7 @@ export default function Landing({ fixed }) {
         <p>
           Don't wanna create an account but still want drink ideas?{" "}
           <button
-          id="btn-links"
+            id="btn-links"
             className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="button"
           >
