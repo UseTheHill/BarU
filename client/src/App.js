@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 // import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -14,6 +14,15 @@ import "tailwindcss/tailwind.css";
 
 function App() {
   document.title = "BarU";
+  //  const [loading, setLoading] = useState(true)
+  
+  //   useEffect(()=> {
+  //     setLoading(false);
+  //   })
+      
+  //     if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+  //       return null; // render null when app is not ready
+  //     }
   return (
     <Router>
       <Nav />
