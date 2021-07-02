@@ -64,6 +64,7 @@ class PostPageScreen extends Component {
     let nam = target.name;
     let val = target.value;
     this.setState({ [nam]: val });
+    console.log(this.state);
   };
 
   imageChangeHandler = (event) => {
@@ -78,8 +79,14 @@ class PostPageScreen extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const target = event.target;
+    let nam = target.name;
+    let val = target.value;
+    this.setState({ [nam]: val });
+    console.log(this.state);
+    
     // sendDetailsToServer();
-    console.log("working");
+   
   }
   render() {
     return (
@@ -128,7 +135,9 @@ class PostPageScreen extends Component {
 
             <div className="flex justify-center">
               <button
-                onClick={this.handleSubmit} /*onChange={this.myChangeHandler}*/
+                onClick={
+                  this.myChangeHandler
+                } /*onChange={this.myChangeHandler}*/
                 className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold my-4 py-2 px-8 rounded focus:outline-none focus:shadow-outline tracking-wide w-full"
                 type="button"
               >
