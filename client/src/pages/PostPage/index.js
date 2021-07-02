@@ -34,15 +34,16 @@ class PostPageScreen extends Component {
     this.myChangeHandler = this.myChangeHandler.bind(this);
   }
   sendDetailsToServer = () => {
-    fetch("/api/userSession", {
+    console.log("working");
+    fetch("/api/newPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        drinkname: state.drinkname,
-        barname: state.barname,
-        description: state.description,
+        drinkname: this.state.drinkname,
+        barname: this.state.barname,
+        description: this.state.description,
       }),
     })
       .then((res) => res.json())
@@ -64,6 +65,7 @@ class PostPageScreen extends Component {
     let nam = target.name;
     let val = target.value;
     this.setState({ [nam]: val });
+    console.log(this.state);
   };
 
   imageChangeHandler = (event) => {
@@ -76,11 +78,16 @@ class PostPageScreen extends Component {
 
   }*/
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-    // sendDetailsToServer();
-    console.log("working");
-  }
+    // const target = event.target;
+    // let nam = target.name;
+    // let val = target.value;
+    // this.setState({ [nam]: val });
+    // console.log(this.state);
+
+    this.sendDetailsToServer();
+  };
   render() {
     return (
       // <div className="shadow overflow-hidden sm:rounded-md">
