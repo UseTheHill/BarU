@@ -21,7 +21,9 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "if-env": "^1.0.4",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "path": "^0.12.7"
   }
 }
