@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { Component } from "react";
+// import { Component } from "react";
 import "./RandomDrinks.css";
+
 
 export default class RandomDrinks extends React.Component {
   //ask about super props and cancel token
@@ -9,31 +10,70 @@ export default class RandomDrinks extends React.Component {
     query: '',
     error: '',
     results: {},
-    randomDrinks: [],
+    randomDrinks:<div></div>,
   };
 
 
-  componentDidMount(randomDrinks) {
-    axios
-      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`)
-      .then(({ data }) => {
-        console.log(data.drinks);
-        this.setState(
-          { randomDrinks: data.drinks }
-        )
-      });
-  }
+  // componentDidMount(randomDrinks) {
+  //   axios
+  //     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
+  //     .then(({ data }) => {
+  //       console.log(data.drinks);
+  //       this.setState(
+  //         { randomDrinks: data.drinks }
+  //       )
+  //     });
+  // }
 
   handleInputChange = (event) => {
     const randomDrinks = event.target.value;
-    this.setState({ query: randomDrinks }, () => {
-      this.componentDidMount(randomDrinks)
-    });
+    this.setState({ query: randomDrinks }
+    //   , () => {
+    //   this.componentDidMount(randomDrinks)
+    // }
+    );
   }
 
   handleSubmit = (event) => {
-    this.state.query;
+    event.preventDefault();  
+    console.log('state: ', this.state.query);
+    axios
+    .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
+    .then(({ data }) => {
+      console.log(data.drinks);
+      this.setState(
+        { randomDrinks: 
+          data.drinks.map(drink => {
+            return (
+              <div className="drink-wrap" key= {drink.idDrink}>
+                <div className="drink-content">
+                  <div className="drink-background">
+                    <img
+                      src={drink.strDrinkThumb}
+                      className="drink-img "
+                    />
+                    <div className="">
+                      <h1 className="drink-title">
+                        {drink.strDrink}
+                      </h1>
+                      <p className="drink-ing">
+                        {drink.strIngredient1}<br />
+                        {drink.strIngredient2}<br />
+                        {drink.strIngredient3}<br />
+                        {drink.strInstructions}<br />
+                      </p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+            })}
+      
+      )
+    });
   }
+  
 
   render() {
     const { query, randomDrinks } = this.state
@@ -64,18 +104,19 @@ export default class RandomDrinks extends React.Component {
               className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
             />
             <div className="p-4">
-              <button  onClick={this.handleSubmit} value={this.state.query}className=" btn-links text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
+              <button  onClick={this.handleSubmit} value={query}className=" btn-links text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
                 icon
               </button>
             </div>
           </div>
         </div>
+        {randomDrinks}
 
         {
           //showing api data
         }
 
-        {this.state.randomDrinks.map(drink => {
+        {/* {this.state.randomDrinks.map(drink => {
           return (
             <div className="drink-wrap">
               <div className="drink-content">
@@ -108,7 +149,7 @@ export default class RandomDrinks extends React.Component {
               </div>
             </div>
           )
-        })}
+        })} */}
 
         {
           ///Buttons///
