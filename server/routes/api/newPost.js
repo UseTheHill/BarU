@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Post = require("../../models/post");
+const newPost = require("../../models/post");
 
 function postTest(event) {
   event.preventDefault();
@@ -14,9 +14,7 @@ module.exports = (app) => {
     const { drinkname, barname, description } = body;
     let { file } = body;
 
-    const post = posts[0];
-
-    const newPost = new Post();
+    newPost = new newPost();
 
     newPost.drinkname = drinkname;
     newPost.barname = barname;
@@ -34,7 +32,7 @@ module.exports = (app) => {
         message: "Post data received",
       });
     });
-    db.collection("cocktails").insertOne(req.body, (err, data) => {
+    db.collection("newPost").insertOne(req.body, (err, data) => {
       if (err) return console.log(err);
       res.send("saved to db: " + data);
     });
