@@ -34,6 +34,10 @@ module.exports = (app) => {
         message: "Post data received",
       });
     });
+    db.collection("cocktails").insertOne(req.body, (err, data) => {
+      if (err) return console.log(err);
+      res.send("saved to db: " + data);
+    });
   });
 };
 
