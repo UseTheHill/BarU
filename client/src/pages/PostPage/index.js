@@ -35,7 +35,7 @@ class PostPageScreen extends Component {
   }
   sendDetailsToServer = () => {
     console.log("working");
-    fetch("/api/user", {
+    fetch("/api/cocktails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
