@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 // import { Component } from "react";
-import "./RandomDrinks.css";
-
+import image from "../../public/icons8-search-48.png";
 
 
 export default class RandomDrinks extends React.Component {
@@ -10,67 +9,63 @@ export default class RandomDrinks extends React.Component {
     query: '',
     error: '',
     results: {},
-    randomDrinks: <div></div>,
+    randomDrinks:<div></div>,
   };
 
+
+ 
 
   handleInputChange = (event) => {
     const randomDrinks = event.target.value;
     this.setState({ query: randomDrinks }
-
+    
     );
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault();  
     console.log('state: ', this.state.query);
     axios
-      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
-      .then(({ data }) => {
-        console.log(data.drinks);
-        this.setState(
-          {
-            randomDrinks:
-              data.drinks.map(drink => {
-                return (
-                  <div className="drink-wrap" key={drink.idDrink}>
-                    <div className="drink-content">
-                      <div className="drink-background">
-                        <img
-                          src={drink.strDrinkThumb}
-                          className="drink-img "
-                        />
-                        <div className="">
-                          <h1 className="drink-title">
-                            {drink.strDrink}
-                          </h1>
-                          <div className="drink-ing">
-                            <h1 className="drink-inst"> Ingredients</h1>
-                            <ul className="drink-stuff">
-                              <li>{drink.strIngredient1}</li>
-                              <li>{drink.strIngredient2}</li>
-                              <li>{drink.strIngredient3}</li>
-                            </ul>
-
-                            <h1 className="drink-inst"> How To Make</h1>
-                            <p className="drink-stuff">
-                              {drink.strInstructions}<br />
-                            </p>
-                          </div>
-
-                        </div>
-                      </div>
+    .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
+    .then(({ data }) => {
+      console.log(data.drinks);
+      this.setState(
+        { randomDrinks: 
+          data.drinks.map(drink => {
+            return (
+              <div className="drink-wrap" key= {drink.idDrink}>
+                <div className="drink-content">
+                  <div className="drink-background">
+                    <img
+                      src={drink.strDrinkThumb}
+                      className="drink-img "
+                    />
+                    <div className="">
+                      <h1 className="drink-title">
+                        {drink.strDrink}
+                      </h1>
+                      <p className="drink-ing">
+                        {drink.strIngredient1}<br />
+                        {drink.strIngredient2}<br />
+                        {drink.strIngredient3}<br />
+                        {drink.strInstructions}<br />
+                      </p>
+                      
                     </div>
                   </div>
-                )
-              })
-          }
-
-        )
-      });
+                </div>
+              </div>
+            )
+            })}
+      
+      )
+    });
   }
+  
+
   render() {
     const { query, randomDrinks } = this.state
+   
     return (
       <>
         {
@@ -88,8 +83,8 @@ export default class RandomDrinks extends React.Component {
               className="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
             />
             <div className="p-4">
-              <button onClick={this.handleSubmit} value={query} className=" btn-links text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
-                <img src="icons8-search-24.png" />
+              <button  onClick={this.handleSubmit} value={query}className=" btn-links text-white rounded-full p-2 focus:outline-none w-12 h-12 flex items-center justify-center">
+               <img src= "icons8-search-48.png">Icon  </img>
               </button>
             </div>
           </div>
@@ -103,39 +98,33 @@ export default class RandomDrinks extends React.Component {
 
 
 
-
-// componentDidMount(randomDrinks) {
-//   axios
-//     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
-//     .then(({ data }) => {
-//       console.log(data.drinks);
-//       this.setState(
-//         { randomDrinks: data.drinks }
-//       )
-//     });
-// }
-
+ // componentDidMount(randomDrinks) {
+  //   axios
+  //     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.query}`)
+  //     .then(({ data }) => {
+  //       console.log(data.drinks);
+  //       this.setState(
+  //         { randomDrinks: data.drinks }
+  //       )
+  //     });
+  // }
 
 
 
 //   , () => {
-//   this.componentDidMount(randomDrinks)
-// }
+    //   this.componentDidMount(randomDrinks)
+    // }
 
+ // console.log(randomDrinks)
+    // console.warn(this.state)
 
-
-
-// console.log(randomDrinks)
-// console.warn(this.state)
-
-// function renderList(props) {
-//   const drinkEl = props.randomDrinks.map((post) =>
-//     /*< div>
-//     <img src={query.strDrinkThumb} />
-//     </div >*/
-//     <h1>{query.strDrink}</h1>
-//   );}
-
+    // function renderList(props) {
+    //   const drinkEl = props.randomDrinks.map((post) =>
+    //     /*< div>
+    //     <img src={query.strDrinkThumb} />
+    //     </div >*/
+    //     <h1>{query.strDrink}</h1>
+    //   );}
 
 
 {
@@ -221,7 +210,6 @@ export default class RandomDrinks extends React.Component {
   //{drinkEL}
   //</div>
 }
-
 
 
 //function is from date butler
