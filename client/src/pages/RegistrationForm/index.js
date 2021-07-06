@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./RegistrationForm.css";
 // import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
@@ -18,33 +17,33 @@ function RegistrationForm(props) {
       [id]: value,
     }));
   };
-  
+
   const sendDetailsToServer = () => {
     fetch('/api/user', {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-          email: state.email,
-          password: state.password,
+        email: state.email,
+        password: state.password,
       }),
-  }).then(res => res.json())
+    }).then(res => res.json())
       .then(json => {
-          console.log('json', json);
-          if (json.success) {
-              this.setState({
-                  signUpError: json.message,
-                  isLoading: false,
-                  email: '',
-                  password: '',
-              });
-          } else {
-              /*this.setState({
-                  signUpError: json.message,
-                  isLoading: false,
-              });*/
-          }
+        console.log('json', json);
+        if (json.success) {
+          this.setState({
+            signUpError: json.message,
+            isLoading: false,
+            email: '',
+            password: '',
+          });
+        } else {
+          /*this.setState({
+              signUpError: json.message,
+              isLoading: false,
+          });*/
+        }
       });
   };
 

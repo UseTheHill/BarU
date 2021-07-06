@@ -1,7 +1,7 @@
 //import React from "react";
 //import logo from "../../BarU-logo.png";
 
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../../android-chrome-512x512.png";
 import anime from "animejs/lib/anime.es.js";
@@ -24,16 +24,16 @@ export default function Landing({ fixed }) {
     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
   }
 
-  useEffect(() => { 
+  useEffect(() => {
     demoAsyncCall().then(
-      ()=> {
+      () => {
         setLoading(false);
       }
     )
   })
 
   if (loading) {
-    return <img className="loader" src="android-chrome-512x512.png"/>;
+    return <img className="loader" src="android-chrome-512x512.png" />;
   }
 
   return (
