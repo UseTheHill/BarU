@@ -38,17 +38,19 @@ export default function Landing({ fixed }) {
 
   return (
     <>
+    
       <div id="guest" className="flex justify-center p-8... ">
-        <p className="text-lg font-light leading-relaxed mt-6 mb-4 text-blueGray-800">
+        <h1 className="about">About Us</h1>
+        <p id="desc"className="text-lg font-light leading-relaxed mt-6 mb-4 text-blueGray-800">
           Most bars have created specialty cocktail menus but if you want a
           drink off menu,
-          <br /> BarU is here to help. Search for some of the best bar drinks
-          and order while at the <br />
+           BarU is here to help. Search for some of the best bar drinks
+          and order while at the 
           restaurant.
           <br />
           <br />
           Once you have your drink you can create a post in your account where
-          you can share <br />
+          you can share 
           the name of the drink, the bar you got it from and whether or not you
           liked it.
         </p>
@@ -96,7 +98,7 @@ export default function Landing({ fixed }) {
         //////////////////////////////////////////////////////Search Page Route////////////////////////////////////////////////////////////////////////////
       }
       <div id="guest" className="flex justify-center p-8...">
-        <p>
+        <p id="desc">
           Don't wanna create an account but still want drink ideas?{" "}
           <button
             id="btn-links"
