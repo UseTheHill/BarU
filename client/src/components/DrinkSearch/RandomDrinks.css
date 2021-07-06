@@ -1,10 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sriracha&display=swap');
+
 .btn-links{
     background-color: rgba(182, 173, 255, 0.4);
 }
 .btn-links:hover{
     background-color: rgba(182, 173, 255, 0.9);
 }
-.image-size{
+
+/* ---------- ---------- Breakpoints---------- ---------- */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .image-size{
+    max-width:100%;
+    height:auto;
+}
+.drink-wrap{
+    display: flex;
+    justify-content: center;
+    
+}
+.drink-content{
+    position: relative;
+    width: 50%;
+}
+.drink-background{
+    background-color:white;
+    padding: 0px 0px 15px 0px;
+    margin: 10px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.drink-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+   
+}
+.drink-title{
+    color:rgba(182, 173, 255, 0.9);
+    font-size: xx-large;
+    font-family: 'Permanent Marker', cursive;
+    font-weight:bold;
+    text-align: center;
+    
+}
+.drink-ing{
+  margin:10px 5px;
+}
+.drink-inst{
+  font-size:large;
+  color:rgba(154, 145, 216, 0.9);
+  margin:10px 5px;
+  font-family: 'Sriracha';
+}
+.drink-stuff{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .image-size{
+    max-width:100%;
+    height:auto;
+}
+.drink-wrap{
+    display: flex;
+    justify-content: center;
+    
+}
+.drink-content{
+    position: relative;
+    width: 50%;
+}
+.drink-background{
+    background-color:white;
+    padding: 0px 0px 15px 0px;
+    margin: 10px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.drink-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+   
+}
+.drink-title{
+    color:rgba(182, 173, 255, 0.9);
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    font-weight:bold;
+    text-align: center;
+    
+}
+.drink-ing{
+  margin:10px 5px;
+}
+.drink-inst{
+  font-size: 20px;
+  color:rgba(154, 145, 216, 0.9);
+  margin:10px 5px;
+  font-family: 'Sriracha';
+}
+.drink-stuff{
+  font-family: Arial, Helvetica, sans-serif;
+}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .image-size{
     max-width:50%;
     height:auto;
 }
@@ -26,28 +138,25 @@
   }
 .drink-background{
     background-color:white;
-    /* height: 650px; */
-    /* width: 200px; */
     padding: 0px 0px 25px 0px;
     margin: 25px 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 .drink-img{
     max-width: 100%;
     height: auto;
     opacity: 1;
-  display: block;
-  transition: .5s ease;
-  backface-visibility: hidden;
+   display: block;
+   transition: .5s ease;
+   backface-visibility: hidden;
    
 }
 .drink-title{
-color:rgba(182, 173, 255, 0.9);
-font-size: 50px;
-font-family:Arial, Helvetica, sans-serif;
-font-weight:bold;
-text-align: center;
+    color:rgba(182, 173, 255, 0.9);
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    font-weight:bold;
+    text-align: center;
     
 }
 .drink-ing{
@@ -59,6 +168,139 @@ text-align: center;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
 }
-#drinks-btn{
+.drink-inst{
+  font-size: 50px;
+  color:rgba(154, 145, 216, 0.9);
+  font-family: 'Sriracha';
+}
+.drink-stuff{
+  font-family: Arial, Helvetica, sans-serif;}
+}  
+
+/* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+  .image-size{
+    max-width:50%;
+    height:auto;
+}
+.drink-wrap{
+    display: flex;
+    justify-content: center;
+    
+}
+.drink-content{
+    position: relative;
+    width: 50%;
+}
+.drink-content:hover .drink-img {
+    opacity: 0.3;
+  }
+  
+  .drink-content:hover .drink-ing {
+    opacity: 1;
+  }
+.drink-background{
+    background-color:white;
+    padding: 0px 0px 25px 0px;
+    margin: 25px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.drink-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+   display: block;
+   transition: .5s ease;
+   backface-visibility: hidden;
+   
+}
+.drink-title{
+    color:rgba(182, 173, 255, 0.9);
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    font-weight:bold;
     text-align: center;
+    
+}
+.drink-ing{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.drink-inst{
+  font-size: 50px;
+  color:rgba(154, 145, 216, 0.9);
+  font-family: 'Sriracha';
+}
+.drink-stuff{
+  font-family: Arial, Helvetica, sans-serif;}
+}  
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .image-size{
+    max-width:50%;
+    height:auto;
+}
+.drink-wrap{
+    display: flex;
+    justify-content: center;
+    
+}
+.drink-content{
+    position: relative;
+    width: 50%;
+}
+.drink-content:hover .drink-img {
+    opacity: 0.3;
+  }
+  
+  .drink-content:hover .drink-ing {
+    opacity: 1;
+  }
+.drink-background{
+    background-color:white;
+    padding: 0px 0px 25px 0px;
+    margin: 25px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+.drink-img{
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+   display: block;
+   transition: .5s ease;
+   backface-visibility: hidden;
+   
+}
+.drink-title{
+    color:rgba(182, 173, 255, 0.9);
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    font-weight:bold;
+    text-align: center;
+    
+}
+.drink-ing{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+  
+}
+.drink-inst{
+  font-size: 50px;
+  color:rgba(154, 145, 216, 0.9);
+  font-family: 'Sriracha';
+}
+.drink-stuff{
+  font-family: Arial, Helvetica, sans-serif;}
+
 }
