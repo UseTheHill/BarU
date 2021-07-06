@@ -14,9 +14,6 @@ const NewPostSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    photo: {
-        type: Image,
-    },
     deleted: {
         type: Boolean,
         default: false

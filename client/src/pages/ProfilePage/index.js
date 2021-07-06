@@ -1,10 +1,9 @@
 import React from "react";
-import logo from "../../BarU-logo.png";
 
 function ProfilePageScreen() {
   return (
 
-    <div className ="blogs__wraper bg-gray-200  py-20 px-20">
+    <div className="blogs__wraper bg-gray-200  py-20 px-20">
 
       <div className="flex justify-between items-center">
         <div className="blogs bg-white mr-5">

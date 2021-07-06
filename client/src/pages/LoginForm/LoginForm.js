@@ -3,7 +3,7 @@ import axios from "axios";
 import "./LoginForm.css";
 // import { API_BASE_URL, ACCESS_TOKEN_NAME } from "../../constants/apiConstants";
 import { withRouter } from "react-router-dom";
-// import { mongo } from "mongoose";
+import { Link } from "react-router-dom";
 
 
 
@@ -24,8 +24,8 @@ function LoginForm(props) {
 
   const LoginFunction = () => {
     axios.get('/user')
-    // fetch('/api/user', {
-    //   method: 'GET',
+      // fetch('/api/user', {
+      //   method: 'GET',
       // headers: {
       //   'Content-Type': 'application/json'
       // },
@@ -33,7 +33,7 @@ function LoginForm(props) {
       //   email: state.email,
       //   password: state.password,
       // }),
-    
+
       .then(res => res.json())
       .then(json => {
         console.log('json', json);
@@ -61,15 +61,15 @@ function LoginForm(props) {
     props.history.push("/home");
   };
 
-/*const handleSubmitClick = (e) => {
-    e.preventDefault();
-    if (state.password) {
-      LoginFunction()
-    } else {
-      //props.showError('Passwords do not match');
-    }
-  }*/
-  
+  /*const handleSubmitClick = (e) => {
+      e.preventDefault();
+      if (state.password) {
+        LoginFunction()
+      } else {
+        //props.showError('Passwords do not match');
+      }
+    }*/
+
   // const redirectToHome = () => {
   //   // props.updateTitle("Home");
   //   props.history.push("/home");
@@ -130,8 +130,8 @@ function LoginForm(props) {
             <button
               className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
-              // className="btn btn-primary"
-              onClick={handleSubmitClick}
+            // className="btn btn-primary"
+            //onClick={
             >
               Login
             </button>
@@ -153,8 +153,8 @@ function LoginForm(props) {
             Register
           </span>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

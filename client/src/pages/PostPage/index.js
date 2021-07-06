@@ -1,24 +1,6 @@
-// import React from "react";
-// import logo from "../../BarU-logo.png";
-
-// function PostPageScreen () {
-//     return(
-//     <div className="App">
-//         <div className="App-header">
-//           <img src={logo}  alt="logo" />
-//           <h2>Welcome to the BarU PostPage!</h2>
-//         </div>
-//     </div>
-//     )
-// }
-
-// export default PostPageScreen;
-
-// import React from "react";
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class PostPageScreen extends Component {
   constructor(props) {
@@ -32,10 +14,11 @@ class PostPageScreen extends Component {
     };
 
     this.myChangeHandler = this.myChangeHandler.bind(this);
+    this.sendDetailsToServer = this.sendDetailsToServer.bind(this);
   }
   sendDetailsToServer = () => {
     console.log("working");
-    fetch("/api/cocktails", {
+    fetch("/api/newPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,17 +57,10 @@ class PostPageScreen extends Component {
     });
     console.log(this.state.file);
   };
-  /*const myNewPost = async function(event){
 
-  }*/
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // const target = event.target;
-    // let nam = target.name;
-    // let val = target.value;
-    // this.setState({ [nam]: val });
-    // console.log(this.state);
 
     this.sendDetailsToServer();
   };

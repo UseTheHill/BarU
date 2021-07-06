@@ -17,16 +17,16 @@ async function signup(event) {
             email,
             password
         } = body;
-      
+
         if (!password) {
             return res.send({
-                success:false,
+                success: false,
                 message: 'Error: Please enter a password'
             });
         }
         if (!email) {
             return res.send({
-                success:false,
+                success: false,
                 message: 'Error: Please enter an email'
             });
         }
@@ -48,9 +48,9 @@ async function signup(event) {
             return res.send({
                 success: true,
                 message: 'Successfully signed up'
-                });
-    }); 
-});
+            });
+        });
+    });
     // const response = await fetch(
     //     "/api/user",
     //     {
@@ -69,7 +69,7 @@ async function signup(event) {
     //   }else{
     //     alert("failed to sign up. Please try again.");
     //   }
-        
+
     // })
     // .catch(error => {
     //     console.log(error);
