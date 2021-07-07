@@ -10,10 +10,23 @@ import "./index.css";
 export default function Landing({ fixed }) {
   anime({
     targets: ".cocktail_image",
-    translateX: 500,
-    direction: "alternate",
-    loop: true,
-    easing: "linear",
+    translateX: {
+      value: '*=2.5', // 100px * 2.5 = '250px'
+      duration: 1000
+    },
+    // width: {
+    //   value: '-=20px', // 28 - 20 = '8px'
+    //   duration: 1800,
+    //   easing: 'easeInOutSine'
+    // },
+    rotate: {
+      value: '+=2turn', // 0 + 2 = '2turn'
+      duration: 1800,
+      easing: 'easeInOutSine'
+    },
+    direction: 'alternate',
+    loop: true
+    
   });
 
   document.title = "Welcome to BarU";
@@ -97,6 +110,10 @@ export default function Landing({ fixed }) {
       {
         //////////////////////////////////////////////////////Search Page Route////////////////////////////////////////////////////////////////////////////
       }
+      <div className="drinky flex item-center cocktail_image object-none object-center p-5 m-5 ...">
+        <img src={image} />
+      </div>
+    
       <div id="guest" className="flex justify-center p-8...">
         <p id="desc">
           Don't wanna create an account but still want drink ideas?{" "}
@@ -118,9 +135,7 @@ export default function Landing({ fixed }) {
           </button>
         </p>
       </div>
-      <div className="cocktail_image object-none object-center p-10 m-10 ...">
-        <img src={image} />
-      </div>
+      
     </>
   );
 }
