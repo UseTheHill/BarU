@@ -26,7 +26,7 @@ export default function Nav({ fixed }) {
                   : "nav-link"
               }
             >
-              <div className="font-semibold text-xl tracking-tight ">
+              <div className="font-semibold text-xxl tracking-tight ">
                 {
                   // Nav Bar Image/text source
                 }
