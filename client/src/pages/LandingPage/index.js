@@ -116,7 +116,7 @@ export default function Landing({ fixed }) {
     
       <div id="guest" className="flex justify-center p-8...">
         <p id="desc">
-          Don't wanna create an account but still want drink ideas?{" "}
+          Don't want to create an account but still want drink ideas?{" "}
           <button
             id="btn-links"
             className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
