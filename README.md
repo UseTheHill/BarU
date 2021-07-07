@@ -4,11 +4,11 @@
 
 ## Deployed Link
 
-TBD
+https://baru-app.herokuapp.com/
 
 ## Demo
 
-![gif](#)
+![gif](images/demo_baru.gif)
 
 ## Description
 
@@ -32,6 +32,7 @@ Once you have your drink you can create a post in your account where you can sha
 - Tailwind
 - Animejs
 - MongoDB
+- CocktailDB
 
 ## License
 
