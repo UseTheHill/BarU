@@ -42,7 +42,7 @@ export default function Nav({ fixed }) {
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <i className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Menu</i>
+                <i className="bg-pink-200 text-gray-800 hover:bg-pink-600 font-bold uppercase text-xl px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Menu</i>
               </button>
             </Link>
           </div>
@@ -71,7 +71,7 @@ export default function Nav({ fixed }) {
                       : "nav-link"
                   }
                 >
-                  <div className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                  <div className="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75">
                     <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
                     <span className="ml-2">Search</span>
                   </div>
@@ -91,7 +91,7 @@ export default function Nav({ fixed }) {
                   }
                 >
                   <div
-                    className="px-3 py-2 flex items-center text-xs uppercase font font-bold leading-snug text-white hover:opacity-75"
+                    className="px-3 py-2 flex items-center text-xl uppercase font font-bold leading-snug text-white hover:opacity-75"
                     href="#pablo"
                   >
                     <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
@@ -113,7 +113,7 @@ export default function Nav({ fixed }) {
                   }
                 >
                   <div
-                    className="px-3 py-2 flex items-center text-xs uppercase font font-bold leading-snug text-white hover:opacity-75"
+                    className="px-3 py-2 flex items-center text-xl uppercase font font-bold leading-snug text-white hover:opacity-75"
                     href="#pablo"
                   >
                     <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
@@ -134,7 +134,7 @@ export default function Nav({ fixed }) {
                       : "nav-link"
                   }
                 >
-                  <div className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                  <div className="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75">
                     <i
                       id="logout"
                       className="fab fa-facebook-square text-lg leading-lg text-white "
