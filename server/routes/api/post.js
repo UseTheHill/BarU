@@ -10,7 +10,7 @@ function postTest(event) {
 console.log(postTest);
 
 module.exports = (app) => {
-  app.post("/api/user", (req, res, next) => {
+  app.get("/api/user", (req, res, next) => {
     const { body } = req;
     const { drinkname, barname, description } = body;
     //let { file } = body;

@@ -7,12 +7,18 @@ import logo from "../../BarU-logo-2.png";
 // import React, { Component } from "react";
 export default function Nav({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  /*function refreshPage(event) {
+    window.location.reload();
+    //this.setState({});
+  }*/
+
   return (
     <>
 
       <nav id="nav-color" className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
 
-     
+
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           {
             // Nav Bar Logo
@@ -48,10 +54,10 @@ export default function Nav({ fixed }) {
           </div>
 
           <div
-            className={ 
+            className={
               "lg:flex flex-grow items-center" +
               (navbarOpen ? " flex" : " hidden")
-            } 
+            }
             id="example-navbar-danger"
           >
             {
@@ -125,7 +131,7 @@ export default function Nav({ fixed }) {
               {
                 // Logout Link /////////
               }
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   to="/"
                   className={
@@ -142,7 +148,7 @@ export default function Nav({ fixed }) {
                     <span className="ml-2">Logout</span>
                   </div>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
