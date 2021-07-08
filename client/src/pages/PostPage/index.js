@@ -174,15 +174,6 @@ class PostPageScreen extends Component {
                 Edit
               </button>
 
-              <button id="btn1" onClick={this.increment1} className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
-                Like
-              </button>
-              <button id="display1" className="inc bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
-                {this.state.count1}
-              </button>
-              <button id="btn1" onClick={this.decrement1} className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
-                Dislike
-              </button>
               <button onClick={this.handleDelete} className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mx-8 my-4 rounded space-x-2 md:space-x-8">
                 Delete
               </button>
