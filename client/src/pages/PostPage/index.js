@@ -113,9 +113,6 @@ class PostPageScreen extends Component {
             </p>
           </div>
           <div className="overflow-hidden sm:rounded-md block text-gray-700 text-sm font-bold mb-2">
-            <h1>
-              {this.state.drinkname} {this.state.barname}
-            </h1>
             <p>Enter the drink name:</p>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
