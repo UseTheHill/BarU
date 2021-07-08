@@ -63,7 +63,6 @@ function RegistrationForm(props) {
     } else {
       // props.showError("Passwords do not match");
     }
-    props.history.push("/login");
   };
   return (
     <div className="flex justify-center p-8... ">
