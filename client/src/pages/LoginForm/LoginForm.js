@@ -70,10 +70,10 @@ function LoginForm(props) {
       }
     }*/
 
-  // const redirectToHome = () => {
-  //   // props.updateTitle("Home");
-  //   props.history.push("/home");
-  // };
+  const redirectToProfile = () => {
+
+    props.history.push("/profile");
+  };
 
   const redirectToRegister = () => {
     // props.updateTitle("Register");
@@ -128,6 +128,7 @@ function LoginForm(props) {
           </div>
           <div className="flex items-center justify-between form-check">
             <button
+              onClick={() => redirectToProfile()}
               className="bg-pink-200 hover:bg-pink-500 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             // className="btn btn-primary"
