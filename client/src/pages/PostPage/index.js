@@ -115,18 +115,6 @@ class PostPageScreen extends Component {
                 <Link>Submit</Link>
               </button>
             </div>
-//             <div className="flex justify-center">
-//               <p>
-//                 {this.state.drinkname + " "}
-//                 <br />
-//                 {this.state.barname + " "}
-//                 <br />
-//                 {this.state.description + " "}
-//                 <br />
-//                 {this.state.drinktitle + " "}
-//               </p>
-//               <img src={this.state.file}></img>
-//             </div>
           </div>
         </form>
       </div>
